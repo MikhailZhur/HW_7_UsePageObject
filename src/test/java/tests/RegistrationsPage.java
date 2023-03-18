@@ -30,6 +30,14 @@ public class RegistrationsPage {
         return this;
     }
 
+    public void removeBanner(){
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
+    }
+
+    private void executeJavaScript(String s) {
+    }
+
     public RegistrationsPage setFirstName(String value) {
         firstNameInput.setValue(value);
         return this;
