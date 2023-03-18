@@ -30,9 +30,10 @@ public class RegistrationsPage {
         return this;
     }
 
-    public void removeBanner(){
+    public RegistrationsPage removeBanner(){
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
+        return this;
     }
 
     private void executeJavaScript(String s) {

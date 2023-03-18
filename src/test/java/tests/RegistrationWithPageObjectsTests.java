@@ -11,6 +11,7 @@ public class RegistrationWithPageObjectsTests extends BaseTest {
 
         registrationsPage
                 .openPage()
+                .removeBanner()
                 .setFirstName("Mikhail")
                 .setLastName("Zhuravlev")
                 .setEmail("miha99_66@mail.ru")
