@@ -1,4 +1,4 @@
-package pages;
+package tests;
 
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponents;
@@ -20,7 +20,9 @@ public class RegistrationsPage {
             lastNameInput = $("#lastName"),
             emailInput = $("#userEmail"),
             phoneNumberInput = $("#userNumber"),
-            dateOfBirthInput = $("#dateOfBirthInput");
+            dateOfBirthInput = $("#dateOfBirthInput"),
+            subjectInput = $("#subjectsInput"),
+            inputFile = $("input[type='file']");
 
     public RegistrationsPage openPage() {
         open("/automation-practice-form");
@@ -60,7 +62,7 @@ public class RegistrationsPage {
     }
 
     public RegistrationsPage setSubjects(String value) {
-        $("#subjectsInput").setValue(value).pressEnter();
+        subjectInput.setValue(value).pressEnter();
         return this;
     }
 
@@ -72,8 +74,7 @@ public class RegistrationsPage {
     }
 
     public RegistrationsPage uploadFile() {
-        $("input[type='file']")
-                .uploadFile(new File("src/test/resources/CV.jpg"));
+        inputFile.uploadFile(new File("src/test/resources/CV.jpg"));
         return this;
     }
 
